@@ -3,6 +3,25 @@ import styles from "../style";
 import { arrowUp } from "../assets";
 import { callToAction } from "../constants";
 import emailjs from "@emailjs/browser";
+import { HiOutlineMail, HiOutlineLocationMarker, HiOutlineUser } from "react-icons/hi";
+import { BiMessageSquareDetail } from "react-icons/bi";
+import { MdOutlineSubject } from "react-icons/md";
+
+const ContactCard = ({ icon: Icon, title, value }) => (
+  <div className="border border-gray-700 rounded-[12px] p-4 hover:border-teal-200 transition-colors">
+    <div className="flex items-center gap-3">
+      <div className="p-2 rounded-lg bg-white/5">
+        <Icon className="text-teal-200 text-[20px]" />
+      </div>
+      <div>
+        <h4 className="font-poppins font-medium text-teal-200 text-[14px] uppercase tracking-wider">
+          {title}
+        </h4>
+        <p className="font-poppins text-white text-[16px]">{value}</p>
+      </div>
+    </div>
+  </div>
+);
 
 const LetsConnect = () => {
   const [formData, setFormData] = useState({
@@ -27,8 +46,8 @@ const LetsConnect = () => {
 
     try {
       await emailjs.send(
-        "service_ghvwirz", 
-        "template_zqml3ja", 
+        "service_ghvwirz",
+        "template_zqml3ja",
         {
           from_name: formData.name,
           from_email: formData.email,
@@ -36,13 +55,11 @@ const LetsConnect = () => {
           message: formData.message,
           to_email: "savitha161703@gmail.com",
         },
-        "C9isNmQSOFCEBL_xs" 
+        "C9isNmQSOFCEBL_xs"
       );
 
-      // Show success popup
       setShowSuccess(true);
-      
-      // Reset form
+
       setFormData({
         name: "",
         email: "",
@@ -50,7 +67,6 @@ const LetsConnect = () => {
         message: "",
       });
 
-      // Hide success popup after 3 seconds
       setTimeout(() => {
         setShowSuccess(false);
       }, 3000);
@@ -63,11 +79,13 @@ const LetsConnect = () => {
   };
 
   return (
-   <section id="contact" className="mt-5 md:mt-8 mb-12">
-      <h1 className="flex-1 font-poppins font-semibold ss:text-[55px] text-[45px] text-white ss:leading-[80px] leading-[80px] mb-10">
-        Get In Touch
-      </h1>
-
+ <section id="contact" className="pt-12 pb-12">
+      <div className="mb-12">
+        <h1 className="font-poppins font-semibold ss:text-[55px] text-[45px] text-white ss:leading-[80px] leading-[80px]">
+          Get In Touch
+        </h1>
+        <div className="h-1.5 w-24 bg-teal-200 mt-4 hidden md:block rounded-full" />
+      </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Contact Information */}
         <div className="border border-gray-700 rounded-[20px] p-8">
@@ -78,33 +96,18 @@ const LetsConnect = () => {
             Open to collaboration, new ideas, and technology discussions.
           </p>
 
-          <div className="space-y-6">
-            <div>
-              <p className="text-gradient font-poppins font-medium text-[14px] mb-2 uppercase tracking-wider">
-                📞 PHONE
-              </p>
-              <p className="font-poppins text-white text-[16px]">
-                +91 63741 40578
-              </p>
-            </div>
-
-            <div>
-              <p className="text-gradient font-poppins font-medium text-[14px] mb-2 uppercase tracking-wider">
-                📧 EMAIL
-              </p>
-              <p className="font-poppins text-white text-[16px]">
-                savitha161703@gmail.com
-              </p>
-            </div>
-
-            <div>
-              <p className="text-gradient font-poppins font-medium text-[14px] mb-2 uppercase tracking-wider">
-                📍 LOCATION
-              </p>
-              <p className="font-poppins text-white text-[16px]">
-                Coimbatore, India
-              </p>
-            </div>
+          {/* Contact Cards */}
+          <div className="space-y-4">
+            <ContactCard
+              icon={HiOutlineMail}
+              title="Email"
+              value="savitha161703@gmail.com"
+            />
+            <ContactCard
+              icon={HiOutlineLocationMarker}
+              title="Location"
+              value="Coimbatore, India"
+            />
           </div>
         </div>
 
@@ -113,8 +116,8 @@ const LetsConnect = () => {
           <form onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
               <div>
-                <label className="text-gradient font-poppins font-medium text-[14px] mb-2 flex items-center gap-2">
-                  👤 Name
+                <label className="text-teal-200 font-poppins font-medium text-[14px] mb-2 flex items-center gap-2">
+                  <HiOutlineUser className="text-[16px]" /> Name
                 </label>
                 <input
                   type="text"
@@ -128,8 +131,8 @@ const LetsConnect = () => {
               </div>
 
               <div>
-                <label className="text-gradient font-poppins font-medium text-[14px] mb-2 flex items-center gap-2">
-                  📧 Email
+                <label className="text-teal-200 font-poppins font-medium text-[14px] mb-2 flex items-center gap-2">
+                  <HiOutlineMail className="text-[16px]" /> Email
                 </label>
                 <input
                   type="email"
@@ -144,8 +147,8 @@ const LetsConnect = () => {
             </div>
 
             <div className="mb-4">
-              <label className="text-gradient font-poppins font-medium text-[14px] mb-2 flex items-center gap-2">
-                📝 Subject
+              <label className="text-teal-200 font-poppins font-medium text-[14px] mb-2 flex items-center gap-2">
+                <MdOutlineSubject className="text-[16px]" /> Subject
               </label>
               <input
                 type="text"
@@ -159,8 +162,8 @@ const LetsConnect = () => {
             </div>
 
             <div className="mb-6">
-              <label className="text-gradient font-poppins font-medium text-[14px] mb-2 flex items-center gap-2">
-                💬 Message
+              <label className="text-teal-200 font-poppins font-medium text-[14px] mb-2 flex items-center gap-2">
+                <BiMessageSquareDetail className="text-[16px]" /> Message
               </label>
               <textarea
                 name="message"
@@ -189,7 +192,7 @@ const LetsConnect = () => {
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-primary border border-teal-200 rounded-lg p-8 max-w-md mx-4 shadow-lg shadow-teal-200/20">
             <div className="text-center">
-              <div className="text-6xl mb-4">✓</div>
+              <div className="text-6xl mb-4 text-teal-200">✓</div>
               <h3 className="font-poppins font-semibold text-[24px] text-white mb-2">
                 Message Sent!
               </h3>

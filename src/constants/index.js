@@ -1,32 +1,15 @@
 import {
-  gdsc,
-  iris,
-  ecell,
-  genesis,
   portfolio,
   cdc,
-  comicify_ai,
   chargeswap,
   placeicon,
   recruitment,
   aptean,
-  greentrust,
-  devfolio,
   fortinent,
   pba,
-  ethglobal,
   polkadot,
   lightspeed,
-  dennisivy,
-  manipal,
-  icon,
-  ethforall,
-  ethindia,
-  globalAi,
-  khoj,
-  kosh,
   polkadot_dev_cli,
-  hackathon_curation_agent,
   kudos,
   skcet,
   nitte,
@@ -40,7 +23,6 @@ import {
   nitte_hack,
   Step_certificate,
   AWS,
-  web3_marketing_hackathon
 } from "../assets";
 
 import {
@@ -110,8 +92,12 @@ export const callToAction = "https://www.linkedin.com/in/savitha-kandasamy-24692
 
 export const navLinks = [
   {
+    id: "experience",
+    title: "Experience",
+  },
+   {
     id: "skills",
-    title: "Skills & Experience",
+    title: "Skills",
   },
   {
     id: "education",
@@ -126,7 +112,7 @@ export const navLinks = [
     title: "Projects",
   },
   {
-    id: "contactMe",
+    id: "contact",
     title: "Contact Me",
   },
 ];
@@ -514,70 +500,6 @@ export const projects = [
   }
 ];
 
-// Add links to blogs here
-export const blogPosts = [
-  {
-    id: "post-1",
-    title: "Blog Post 01 - Title",
-    link: "#",
-    date: new Date().toLocaleDateString(), // Can be edited to any string format
-    image: "https://via.placeholder.com/600/92c952",
-    tags: [
-      {
-        id: "tag-1",
-        name: "tag 01",
-      },
-      {
-        id: "tag-2",
-        name: "tag 03",
-      },
-      {
-        id: "tag-3",
-        name: "tag 03",
-      },
-    ],
-  }
-];
-
-// Highlight your GitHub stats like - Organisation, Issues Opened, Pull Requests etc.
-export const stats = [
-  {
-    id: "stats-1",
-    title: "Organisations",
-    value: "2+",
-  },
-  {
-    id: "stats-2",
-    title: "Issues Opened",
-    value: "6+",
-  },
-  {
-    id: "stats-3",
-    title: "Pull Requests",
-    value: "6+",
-  },
-];
-
-// List out the extra curricular activities you have indulged in, like - student clubs, research groups etc.
-export const extraCurricular = [
-  {
-    id: 1,
-    organisation: "Devfolio",
-    title: "UniDAO Lead",
-    duration: "December 2021 - Present",
-    content: [
-      {
-        text: "Selected among 5 students across the country to lead the initiative and grow the culture of Blockchain and Ethereum, powered by Devfolio.",
-        link: "https://www.linkedin.com/feed/update/urn:li:activity:7097977924686942209/",
-      },
-      {
-        text: "Led a cohort of 37 selected students over 6 weeks to learn and build in the Ethereum ecosystem.",
-        link: "https://www.linkedin.com/feed/update/urn:li:activity:7095310520282480641/",
-      },
-    ],
-    logo: devfolio,
-  }
-];
 
 // Links to your social media profiles
 export const socialMedia = [

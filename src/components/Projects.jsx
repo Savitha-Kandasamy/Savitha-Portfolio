@@ -24,8 +24,8 @@ const Project = (props) => {
             <div className="flex flex-wrap gap-4">
               {props.stack.map((tech, index) => (
                 <div
-                  key={tech.id}
-                  index={index}
+                 key={`tech-${index}`}
+                 index={index}
                   className="text-dimWhite text-[20px] hover:text-teal-200 tooltip"
                 >
                   {React.createElement(tech.icon)}
@@ -111,13 +111,14 @@ const Projects = () => {
   const isNextDisabled = currentIndex >= projects.length - 1;
   const isPrevDisabled = currentIndex === 0;
 
-  return (
-    <section id="projects" className="overflow-hidden">
+return (
+    <section id="projects" className="overflow-hidden mb-8">
       <h1 className="flex-1 font-poppins font-semibold ss:text-[55px] text-[45px] text-white ss:leading-[80px] leading-[80px]">
         Projects
       </h1>
-
-      <div className="container px-2 py-14 mx-auto mb-8">
+    <div className="h-2 w-32 bg-gradient-to-r from-teal-400 to-transparent mt-2 rounded-full mx-auto md:mx-0" />
+      <div className="container px-2 py-8 mx-auto">
+        {/* Changed py-14 to py-8 */}
         <div className="overflow-hidden">
           <div
             ref={containerRef}
@@ -126,17 +127,15 @@ const Projects = () => {
               transform: `translateX(-${currentIndex * cardTotalWidth}px)`,
             }}
           >
-            {/* Render all project cards */}
             {projects.map((project, index) => (
               <Project key={project.id} index={index} {...project} />
             ))}
           </div>
-          <div className="flex justify-end mb-8">
-            {/* Navigation buttons */}
+          <div className="flex justify-end">
+            {/* Removed mb-8 from here */}
             <button
               onClick={handlePrev}
               disabled={isPrevDisabled}
-              // p-2 bg-gray-700 rounded-full disabled:opacity-50 mx-2 hover:bg-gray-600 transition-colors
               className="p-2 bg-gray-700 rounded-full disabled:opacity-50 mx-2 hover:bg-gray-600 transition-colors text-white"
             >
               &lt;

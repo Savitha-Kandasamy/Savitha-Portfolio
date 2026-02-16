@@ -60,6 +60,8 @@ const Education = () => {
       <h1 className="flex-1 font-poppins font-semibold ss:text-[55px] text-[45px] text-white ss:leading-[80px] leading-[80px]">
         Education
       </h1>
+          <div className="h-2 w-32 bg-gradient-to-r from-teal-400 to-transparent mt-2 rounded-full mx-auto md:mx-0" />
+
       <motion.div
         className={layout.sectionReverse}
         initial={{ x: -40, opacity: 0 }}

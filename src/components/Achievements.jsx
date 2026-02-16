@@ -21,6 +21,7 @@ const Achievements = () => {
           <h1 className="flex-1 font-poppins font-semibold ss:text-[55px] text-[45px] text-white ss:leading-[80px] leading-[80px]">
             Achievements & Certifications
           </h1>
+    <div className="h-2 w-32 bg-gradient-to-r from-teal-400 to-transparent mt-2 rounded-full mx-auto md:mx-0" />
         </div>
       </div>
       <div className="absolute z-[0] w-[60%] h-[60%] -left-[50%] rounded-full blue__gradient bottom-40" />

@@ -11,7 +11,7 @@ import {
   Footer,
   // OpenSource,
   Projects,
-  BlogPosts,
+  // BlogPosts,
   Loading,
   Achievements,
   Contact
@@ -65,7 +65,7 @@ const App = () => {
             >
               <div className={`${styles.boxWidth}`}>
                 <Projects />
-                <BlogPosts enabled={false} />
+                {/* <BlogPosts enabled={false} /> */}
                 <Contact />
                 {/* <OpenSource />
                 <ExtraCurricular /> */}
